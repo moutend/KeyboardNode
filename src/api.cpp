@@ -133,14 +133,14 @@ void __stdcall Teardown(int32_t *code) {
 
   Log->Info(L"Teardown KeyboardNode", GetCurrentThreadId(), __LONGFILE__);
 
-  if (!SetEvent(windowsHookLoopCtx->QuitEvent)) {
+  if (!SetEvent(winhookLoopCtx->QuitEvent)) {
     Log->Fail(L"Failed to send event", GetCurrentThreadId(), __LONGFILE__);
     *code = -1;
     return;
   }
 
-  WaitForSingleObject(windowsHookLoopThread, INFINITE);
-  SafeCloseHandle(windowsHookLoopThread);
+  WaitForSingleObject(winhookLoopThread, INFINITE);
+  SafeCloseHandle(winhookLoopThread);
 
   Log->Info(L"Delete winhook loop thread", GetCurrentThreadId(), __LONGFILE__);
 
