@@ -141,7 +141,7 @@ void __stdcall Teardown(int32_t *code) {
   }
 
   WaitForSingleObject(winhookLoopThread, INFINITE);
-  SafeCloseHandle(winhookLoopThread);
+  SafeCloseHandle(&winhookLoopThread);
 
   Log->Info(L"Delete winhook loop thread", GetCurrentThreadId(), __LONGFILE__);
 
@@ -152,7 +152,7 @@ void __stdcall Teardown(int32_t *code) {
   }
 
   WaitForSingleObject(requestLoopThread, INFINITE);
-  SafeCloseHandle(requestLoopThread);
+  SafeCloseHandle(&requestLoopThread);
 
   Log->Info(L"Delete request loop thread", GetCurrentThreadId(), __LONGFILE__);
 
