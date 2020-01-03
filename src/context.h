@@ -3,7 +3,7 @@
 #include <windows.h>
 
 struct LogLoopContext {
-struct LogLoopContext {
+  HANDLE QuitEvent = nullptr;
 };
 
 struct RequestLoopContext {
