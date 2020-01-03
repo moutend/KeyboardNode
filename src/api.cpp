@@ -47,7 +47,8 @@ void __stdcall Setup(int32_t *code, int32_t logLevel) {
 
   if (logLoopCtx->QuitEvent == nullptr) {
     Log->Fail(L"Failed to create event", GetCurrentThreadId(), __LONGFILE__);
-    return -1;
+    *code = -1;
+    return;
   }
 
   Log->Info(L"Create log loop thread", GetCurrentThreadId(), __LONGFILE__);
@@ -134,7 +135,8 @@ void __stdcall Teardown(int32_t *code) {
 
   if (!SetEvent(windowsHookLoopCtx->QuitEvent)) {
     Log->Fail(L"Failed to send event", GetCurrentThreadId(), __LONGFILE__);
-    return -1;
+    *code = -1;
+    return;
   }
 
   WaitForSingleObject(windowsHookLoopThread, INFINITE);
@@ -144,7 +146,8 @@ void __stdcall Teardown(int32_t *code) {
 
   if (!SetEvent(requestLoopCtx->QuitEvent)) {
     Log->Fail(L"Failed to send event", GetCurrentThreadId(), __LONGFILE__);
-    return -1;
+    *code = -1;
+    return;
   }
 
   WaitForSingleObject(requestLoopThread, INFINITE);
