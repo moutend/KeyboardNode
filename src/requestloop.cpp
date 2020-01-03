@@ -15,7 +15,7 @@ pplx::task<http_response> notifyKeyDown() {
   json::value c0;
 
   c0[U("type")] = json::value(1);
-  c0[U("value")] = json::value(8);
+  c0[U("value")] = json::value(6);
 
   json::value postData;
 

@@ -7,7 +7,7 @@
 #include "context.h"
 #include "logloop.h"
 #include "requestloop.h"
-#include "windowshookloop.h"
+#include "winhookloop.h"
 
 extern Logger::Logger *Log;
 
