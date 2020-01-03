@@ -4,6 +4,7 @@
 #include <mutex>
 #include <windows.h>
 
+#include "api.h"
 #include "context.h"
 #include "logloop.h"
 #include "requestloop.h"
