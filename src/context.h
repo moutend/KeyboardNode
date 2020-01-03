@@ -3,8 +3,7 @@
 #include <windows.h>
 
 struct LogLoopContext {
-  bool IsActive = true;
-  const wchar_t *FullLogPath = nullptr;
+struct LogLoopContext {
 };
 
 struct RequestLoopContext {

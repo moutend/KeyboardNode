@@ -57,7 +57,8 @@ bool isEmptyIUIAutomationElement(IUIAutomationElement *pElement) {
   return false;
 }
 
-HRESULT logIUIAutomationElement(IUIAutomationElement *pElement, const wchar_t *longfile) {
+HRESULT logIUIAutomationElement(IUIAutomationElement *pElement,
+                                const wchar_t *longfile) {
   if (pElement == nullptr) {
     Log->Info(L"<nullptr>", GetCurrentThreadId(), longfile);
     return S_OK;
