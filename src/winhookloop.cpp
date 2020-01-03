@@ -49,7 +49,7 @@ DWORD WINAPI winhookLoop(LPVOID context) {
     return hr;
   }
 
-  WindowsHookLoopContext *ctx = static_cast<WindowsHookLoopContext *>(context);
+  WinhookLoopContext *ctx = static_cast<WinhookLoopContext *>(context);
 
   if (ctx == nullptr) {
     Log->Fail(L"Failed to obtain context", GetCurrentThreadId(), __LONGFILE__);
